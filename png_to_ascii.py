@@ -4,21 +4,26 @@ from numpy import asarray
 from PIL import Image
 
 # symbolList = " .'`^\",:;Il!i><~+_-?][}{1)(|\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; 
-symbolList = " .:-=+*#%@"
+# symbolList = " .:-=+*#%@"
+symbolList = "░▒▓"
 
 def intensityToChar(input):
     result = ' '
     # input /= 3.642857
-    input /= 22.5
+    # input /= 22.5
+    input /= 75
     input = int(input)
 
     # if (input < 70):
-    if (input < 10):
+    # if (input < 10):
+    if (input < 3):
         result = symbolList[input]
     # elif (input <= 71):
-    elif (input <= 11):
+    # elif (input <= 11):
+    elif (input <= 3):
         # result = symbolList[69]
-        result = symbolList[9]
+        # result = symbolList[9]
+        result = symbolList[2]
     else:
         print("You did a fuck up\nUnknown intensity value: " + str(input))
     
